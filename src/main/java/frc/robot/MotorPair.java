@@ -18,7 +18,7 @@ public class MotorPair {
     public MotorPair(int motorID, int coderID, boolean motorReversed, int num){
         motor = new WPI_TalonFX(motorID);
         motor.setInverted(motorReversed);
-        motor.config_kP(0, 0.1);
+        motor.config_kP(0, 0.2);
         // motor.setNeutralMode(NeutralMode.Coast);
 
         this.coder = new CANCoder(coderID);
