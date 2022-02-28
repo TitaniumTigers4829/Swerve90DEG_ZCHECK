@@ -28,10 +28,10 @@ public class Robot extends TimedRobot {
     _modules = new modules();
     _modules._reset();
     // _modules.setDefaultCommand(new doNothing(_modules));
-    new JoystickButton(stick, 2).whenPressed(new spin(_modules).withTimeout(10));
-    new JoystickButton(stick, 3).whenPressed(()->_modules._reset());
+    new JoystickButton(stick, 2).whenPressed(new spin(_modules).withTimeout(5));
+    new JoystickButton(stick, 1).whenPressed(()->_modules._reset());
     new JoystickButton(stick, 4).toggleWhenPressed(new manualControl(_modules, ()->stick.getRawAxis(2)));
-    new JoystickButton(stick, 1).whenPressed(new ToZero(_modules).withTimeout(10));
+    new JoystickButton(stick, 3).whenPressed(new ToZero(_modules).withTimeout(10));
   }
 
   /**
