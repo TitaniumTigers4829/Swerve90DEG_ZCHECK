@@ -44,11 +44,11 @@ public class MotorPair {
     motor.setSelectedSensorPosition(0);
   }
   
-  public void turnTo(double degree, boolean isMotionMagic){
-    if (isMotionMagic){
-      degree = degree * 2048 / 360;
+  public void turnTo(double degree, boolean isMotionMagic) {
+    if (isMotionMagic) {
       SmartDashboard.putNumber("deg", degree);
-      motor.set(ControlMode.MotionMagic, degree);
+      SmartDashboard.putNumber("Encoder Units", degree * 2048 / 360);
+      motor.set(ControlMode.MotionMagic, degree * 2048 / 360);
     }
     else{
       // double currentDeg = coder.getPosition();
