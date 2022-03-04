@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class modules extends SubsystemBase {
   /** Creates a new modules. */
-  MotorPair FL_pair = new MotorPair(1, 11, false, 0);
+  MotorPair FL_pair = new MotorPair(1, 1, false, 0);
   MotorPair FR_pair = new MotorPair(3, 9, false, 1);
   MotorPair BL_pair = new MotorPair(7, 10, false, 2);
   MotorPair BR_pair = new MotorPair(12, 8, false, 3);
@@ -42,6 +42,14 @@ public class modules extends SubsystemBase {
     FR_pair.set(ControlMode.PercentOutput, 0);
     BL_pair.set(ControlMode.PercentOutput, 0);
     BR_pair.set(ControlMode.PercentOutput, 0);
+  }
+
+  public double angle(){
+    return FL_pair.getDeg();
+  }
+
+  public boolean isFLModuleAt(double degree){
+    return (Math.abs(degree - angle()) < 1);
   }
   
   @Override
